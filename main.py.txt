@@ -1,0 +1,11 @@
+#coding: utf-8
+print("Hello World")
+name=input("Vad heter du:  ")
+print(name,"är bäst!")
+print(123 + 345 - 456)
+print(12 + 3 * 8)
+print(7**6)
+print((6+8)*(2+5))
+meter=float(input("Skriv hur många meter: "))
+mile=meter/1609.334
+print(mile,"mile")
