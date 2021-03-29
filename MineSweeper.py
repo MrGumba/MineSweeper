@@ -1,4 +1,5 @@
 # coding: utf-8
+import random
 
 def menu(hardness = 1):
     errorText = 'Du skrev inte in ett heltal mellan dom tillåtna värderna '
@@ -20,7 +21,7 @@ def menu(hardness = 1):
             print(errorText)      
 
 def mineSweeper(hardness = 1):
-    mapMaker(hardness)
+    fieldMaker(hardness)
 
 def difficulty():
     print('easy (1)')
@@ -33,7 +34,25 @@ def difficulty():
             print(errorText)
     menu(difficultySelect)
         
-def mapMaker(hardness):
+def fieldMaker(hardness):
+    fullList = [[], [], [], [], [], [], [], [], [], []]
+    if hardness == 1:
+        for i in range(0, 10):
+            for k in range(0, 10):
+                fullList[i].append(0)
+        p = 0
+        for j in range(0, 10 + p):
+            randomList = random.randint(0, 9)
+            randomMine = random.randint(0, 9)
+            if fullList[randomList][randomMine] != 'x':
+                fullList[randomList][randomMine] = 'x'
+            else: 
+                p += 1
+    mapMaker(hardness, fullList)
+    
+def mapMaker(hardness, fullList):
+    
+
     
 
 menu()
