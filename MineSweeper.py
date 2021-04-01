@@ -48,9 +48,46 @@ def fieldMaker(hardness):
                 fullList[randomList][randomMine] = 'x'
             else: 
                 p += 1
+    
+    print(fullList)
+    for i in range(0, len(fullList)):
+        back = 0
+        front = 3
+        if i == 0:
+            back = 1
+        elif i == len(fullList) - 1:
+            front = 2        
+            
+        for k in range(0, len(fullList)):
+            if fullList[i][k] == 'x':             
+                for j in range(back, front):
+                    if k - 1 > -1 and fullList[i - 1 + j][k - 1] != 'x':
+                        fullList[i - 1 + j][k - 1] += 1
+                    if fullList[i - 1 + j][k] != 'x': 
+                        fullList[i - 1 + j][k] += 1                     
+                    if k + 1 < 10 and fullList[i - 1 + j][k + 1] != 'x':
+                        fullList[i - 1 + j][k + 1] += 1 
+    print(fullList)
+
+            
     mapMaker(hardness, fullList)
     
 def mapMaker(hardness, fullList):
+    playerMap = [[], [], [], [], [], [], [], [], [], []]
+    if hardness == 1:
+        for i in range(0, 10):
+            for k in range(0, 10):
+                playerMap[i].append('#')
+    mapPrint(hardness, playerMap)
+
+def mapPrint(hardness, playerMap):
+    if hardness == 1:
+        esayNumber = ['0','1','2','3','4','5','6','7','8','9']
+        print(' ',' '.join(esayNumber))
+        for l in range(0, 10):
+            print(l, ' '.join(playerMap[l]))
+    
+
     
 
     
