@@ -423,7 +423,7 @@ for j in efternamn:
 print(förnamn, efternamn,'blir',btext,btext2,'baklänges')
 '''
 
-'''uppgift45
+
 dagar = ["måndag", "tisdag", "onsdag", "torsdag", "fredag"]
 varmrätt = []
 vegetariskt = []
@@ -436,7 +436,7 @@ print("Dag".ljust(30)+"Varmrätt".ljust(30)+"Veg. Alternativ".ljust(30))
 for i in range (0,len(dagar)):
     rad = dagar[i].ljust(30)+varmrätt[i].ljust(30)+vegetariskt[i].ljust(30)
     print(rad)
-'''
+
 
 '''uppgift46
 consonants = "bcdfghjklmnpqrstvwxz"
