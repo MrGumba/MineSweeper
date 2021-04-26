@@ -23,7 +23,7 @@ def menu(hardness = 1, win = 0):
             elif menuSelect == 2:
                 difficulty() # Anropar Difficulty där man ändrar svårigheten av spelet.
             elif menuSelect == 3:
-                return  # Ifall man ångrar sig och vill lämna.
+                exit()  # Ifall man ångrar sig och vill lämna.
             else:
                 print(errorText) # detta printas ut ifall ingen av dom tidigare värderna blev angätt. 
         except ValueError:
@@ -66,7 +66,7 @@ def fullListMaker(hardness):
 
 '''Denna funktion skapar spelfältet samt lägger ut bomberna för spelfältet '''
 def fieldMaker(hardness, fullList, playerMap):
-    for i in range(0, len(fullList)): # Denna loop lägger ut alla noller och skappar fältet beronde på svårighets graden tex 10x10 alltså 100 noller.
+    for i in range(0, len(fullList)): # Denna loop lägger ut alla noller och skapar fältet beronde på svårighets graden tex 10x10 alltså 100 noller.
         for k in range(0, len(fullList)):
             fullList[i].append(0)
     if hardness == 1: # Detta kollar svårighets graden och hur många bomber som ska finnas för den svårighets graden.
