@@ -1,6 +1,8 @@
 # coding: utf-8
 import random
 
+
+
 ''' Skälvaste menyn till programet där användaren kan starta, ändra svårighetsgrad eller lämna'''
 def menu(hardness = 1, win = 0):
     errorText = 'Du skrev inte in ett heltal mellan dom tillåtna värderna '
@@ -133,7 +135,7 @@ def mapMaker(hardness, fullList, playerMap):
 
 '''mineHub är hubben som Anropar funktionerna som aktivts behövs medans man köra spelet'''
 def mineHub(hardness, playerMap, fullList, freeSpace, bombCount):
-    while freeSpace != 0: # Kollar så spelet är inte redan över.
+    while freeSpace[0] != 0: # Kollar så spelet är inte redan över.
         mapPrint(hardness, playerMap, bombCount, fullList) # Anropar mapPrint för att visa kartan för spelaren.
         playerInput = playerChoice(hardness, fullList, playerMap) # Anropar playerChoice för att få veta vad användaren vill göra. 
         mapReveal(playerInput, playerMap, fullList, freeSpace, bombCount) # Anropar mapReveal som ändrar till kartan efter användarens input.
